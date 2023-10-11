@@ -36,6 +36,11 @@ export default class OperationQueue {
     })
   }
 
+  public clear() {
+    this.operations = []
+    this.suspend()
+  }
+
   private push<T>(operation: Operation, resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: any) => void) {
     this.operations.push([operation, resolve, reject])
     this.resume()
