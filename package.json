@@ -18,6 +18,7 @@
     "build:copy": "copyfiles -u 1 src/**/*.yml src/**/*.css .build",
     "build:rsync": "rsync -uvaz --delete .build/ dist/",
     "build:cleanup": "rm -rf .build",
+    "lint": "eslint src --ext .ts",
     "clean": "rimraf dist",
     "check": "tsc -p . --noEmit",
     "test": "NODE_ENV=test jest"

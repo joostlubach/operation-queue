@@ -72,7 +72,7 @@ export default class OperationQueue {
   // #region Running
 
   private currentSemaphore = new Semaphore({signalled: true})
-  private allSemaphore     = new Semaphore({signalled: true})
+  private allSemaphore = new Semaphore({signalled: true})
 
   private async runNext() {
     // Dequeue the next operation.

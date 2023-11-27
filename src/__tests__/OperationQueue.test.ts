@@ -2,7 +2,6 @@ import OperationQueue from '../OperationQueue'
 import { DependencyMode } from '../types'
 
 describe("OperationQueue", () => {
-
   let logs: string[]
 
   beforeEach(() => {
@@ -10,7 +9,6 @@ describe("OperationQueue", () => {
   })
 
   describe("single queue", () => {
-
     let queue: OperationQueue
 
     beforeEach(() => {
@@ -46,11 +44,9 @@ describe("OperationQueue", () => {
       await queue.all()
       expect(logs).toEqual(['1', '3', '2'])
     })
-
   })
 
   describe("queue dependencies", () => {
-
     let queue1: OperationQueue
     let queue2: OperationQueue
 
@@ -82,7 +78,7 @@ describe("OperationQueue", () => {
     })
 
     it("should allow specifying some queues to interleave, and some not", async () => {
-      const dirQueue   = new OperationQueue()
+      const dirQueue = new OperationQueue()
       const fileAQueue = new OperationQueue()
       const fileBQueue = new OperationQueue()
 
@@ -106,7 +102,6 @@ describe("OperationQueue", () => {
 
       expect(logs).toEqual(['B1', 'A1', 'dir', 'A1', 'B1'])
     })
-
   })
 
   function log(text: string, after: number = 0) {
@@ -117,5 +112,4 @@ describe("OperationQueue", () => {
       }, after)
     })
   }
-
 })
