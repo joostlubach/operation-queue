@@ -1,4 +1,5 @@
 import Semaphore from 'semaphore'
+
 import { DependencyMode, Operation } from './types'
 
 export default class OperationQueue {
