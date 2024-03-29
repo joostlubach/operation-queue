@@ -1,5 +1,5 @@
-import OperationQueue from '../OperationQueue.js'
-import { DependencyMode } from '../types.js'
+import OperationQueue from '../OperationQueue'
+import { DependencyMode } from '../types'
 
 describe("OperationQueue", () => {
   let logs: string[]

@@ -1,7 +1,6 @@
 {
   "name": "operation-queue",
   "version": "0.0.1",
-  "type": "module",
   "description": "Asynchronous operation queue",
   "private": true,
   "author": "Joost Lubach <joostlubach@gmail.com>",
