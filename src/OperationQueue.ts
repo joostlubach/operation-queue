@@ -1,6 +1,6 @@
-import Semaphore from 'semaphore'
+import { Semaphore } from 'semaphore'
 
-import { DependencyMode, Operation } from './types'
+import { DependencyMode, Operation } from './types.js'
 
 export default class OperationQueue {
 
