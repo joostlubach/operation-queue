@@ -1,1 +1,1 @@
-export { default as OperationQueue } from './OperationQueue.js'
+export { default as OperationQueue } from './OperationQueue'
