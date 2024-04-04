@@ -1,4 +1,4 @@
-import { Semaphore } from 'semaphore'
+import Semaphore from 'semaphore'
 
 import { DependencyMode, Operation } from './types'
 
