@@ -1,1 +1,1 @@
-export { default as OperationQueue } from './OperationQueue'
+export { default } from './OperationQueue'
