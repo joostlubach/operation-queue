@@ -34,5 +34,6 @@
   "dependencies": {
     "semaphore": "workspace:^",
     "ytil": "workspace:^"
-  }
+  },
+  "packageManager": "pnpm@8.4.0"
 }
