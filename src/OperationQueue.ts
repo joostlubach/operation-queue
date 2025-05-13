@@ -31,9 +31,19 @@ export default class OperationQueue {
 
   private operations: OperationEntry[] = []
 
+  public get isEmpty() {
+    return this.operations.length === 0
+  }
+
   public enqueue<T>(operation: () => T | Promise<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       this.push(operation, resolve, reject)
+    })
+  }
+
+  public interrupt<T>(operation: () => T | Promise<T>): Promise<T> {
+    return new Promise((resolve, reject) => {
+      this.unshift(operation, resolve, reject)
     })
   }
 
@@ -44,6 +54,11 @@ export default class OperationQueue {
 
   private push<T>(operation: Operation, resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: any) => void) {
     this.operations.push([operation, resolve, reject])
+    this.resume()
+  }
+
+  private unshift<T>(operation: Operation, resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: any) => void) {
+    this.operations.unshift([operation, resolve, reject])
     this.resume()
   }
 
